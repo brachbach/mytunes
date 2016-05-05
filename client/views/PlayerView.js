@@ -6,6 +6,9 @@ var PlayerView = Backbone.View.extend({
   el: '<audio controls autoplay />',
 
   initialize: function() {
+    this.model.on('ended', function() {
+      console.log(this.model.collection);
+    }, this);
   },
 
   setSong: function(song) {
@@ -18,3 +21,23 @@ var PlayerView = Backbone.View.extend({
   }
 
 });
+
+
+// call play on a song 
+// the play event from the song
+// bubbles up through library (the collection that the song is in)
+// to the app (an AppModel instance) which changes the currentSong to the song that sent the play trigger 
+// app view is listening for any change in currentSong. app view calls playerView's set song, which
+// changes player view's model to the new song and re-renders
+
+
+// psuedocode in progress!!
+// call ended on a song 
+// the ended event from the song
+// bubbles up through library (the collection that the song is in)
+
+
+
+// to the app (an AppModel instance) which changes the currentSong to the song that sent the play trigger 
+// app view is listening for any change in currentSong. app view calls playerView's set song, which
+// changes player view's model to the new song and re-renders
