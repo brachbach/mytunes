@@ -15,6 +15,7 @@ var SongQueue = Backbone.Collection.extend({
       }
     }, this);
     this.on('ended', function() {
+      console.log('ended');
       this.shift();
       if (this.length >= 1) {
         this.playFirst();
