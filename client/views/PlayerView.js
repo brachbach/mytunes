@@ -24,17 +24,3 @@ var PlayerView = Backbone.View.extend({
 });
 
 
-// call play on a song 
-// the play event from the song
-// bubbles up through library (the collection that the song is in)
-// to the app (an AppModel instance) which changes the currentSong to the song that sent the play trigger 
-// app view is listening for any change in currentSong. app view calls playerView's set song, which
-// changes player view's model to the new song and re-renders
-
-
-
-// call ended on a song 
-// the ended event from the song
-// bubbles up to SongQueue (a collection that the song is in)
-// which removes the ended song from the queue and uses PlayFirst to play the next song
-// which then does everything specified above, incl. updating and re-rendering PlayerView
