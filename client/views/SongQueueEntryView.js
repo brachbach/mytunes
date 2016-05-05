@@ -20,6 +20,7 @@ var SongQueueEntryView = Backbone.View.extend({
     return this.$el.html(`
       <td>${this.model.get('artist')}</td>
       <td>${this.model.get('title')}</td>
+      <td>${this.model.get('playcount')}</td>
     `);
   }
 });
