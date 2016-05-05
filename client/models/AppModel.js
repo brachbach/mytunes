@@ -14,12 +14,12 @@ var AppModel = Backbone.Model.extend({
 
 
     params.library.on('play', function(song) {
+      // console.log(this.get('currentSong'));
       this.set('currentSong', song);
-      // console.log('play!!');
     }, this);
-    // params.library.on('ended', function() { // obviously, this doesn't really do anything; it's intended to check whether the app model is receiving the ended event from the song
-    //   console.log('ended!!');
-    // }, this);
+    params.library.on('enqueue', function(song) {
+      this.get('songQueue').add(song);
+    }, this);
   }
 
 });

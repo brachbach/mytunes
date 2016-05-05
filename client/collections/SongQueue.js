@@ -4,7 +4,7 @@ var SongQueue = Backbone.Collection.extend({
   model: SongModel,
 
   playFirst: function () {
-    // console.log(this[0]);
+    // console.log('called SongQueues playFirst');
     this.at(0).play();
   },
 
@@ -15,7 +15,7 @@ var SongQueue = Backbone.Collection.extend({
       }
     }, this);
     this.on('ended', function() {
-      console.log('ended');
+      // console.log('ended propagated to SongQueue');
       this.shift();
       if (this.length >= 1) {
         this.playFirst();

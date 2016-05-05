@@ -44,12 +44,12 @@ describe('PlayerView', function() {
     songQueue.playFirst();
     expect(appView.playerView.model).to.equal(firstSong);
     // Simulate the end of the first song
-    // $(appView.playerView.el).trigger('ended'); ///this will bubble up ONLY VIA THE DOM NOT VIA BACKBONE MODELS!!
-    firstSong.ended(); //doing it this way instead so that the event bubbles up within the backbone models 
+    $(appView.playerView.el).trigger('ended'); ///this will bubble up ONLY VIA THE DOM NOT VIA BACKBONE MODELS!!
+    // firstSong.ended(); //doing it this way instead so that the event bubbles up within the backbone models 
     expect(appView.playerView.model).to.equal(secondSong);
     // Simulate the end of the second song
-    // $(appView.playerView.el).trigger('ended');
-    secondSong.ended();
+    $(appView.playerView.el).trigger('ended');
+    // secondSong.ended();
     expect(appView.playerView.model).to.equal(thirdSong);
   });
 

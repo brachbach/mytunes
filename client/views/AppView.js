@@ -13,7 +13,7 @@ var AppView = Backbone.View.extend({
   },
 
   render: function() {
-    return this.$el.html([
+    return this.$el.html([ //how does this work? documentaiton seems to suggest that you can't pass in arrays
       this.playerView.$el,
       this.libraryView.$el
     ]);
