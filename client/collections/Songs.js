@@ -12,7 +12,6 @@ var Songs = Backbone.Collection.extend({
   initialize: function() {
     this.fetch(
       {
-        data: 'where={"title": "Back and Forth"}',
         success: function() {
           this.trigger('fetched');
         }.bind(this)
@@ -20,11 +19,11 @@ var Songs = Backbone.Collection.extend({
     );
   },
 
-  fetchAndFilter: function() {
-    console.log('fetchAndFilter');
+  fetchAndFilter: function(userInput) {
+    console.log(userInput);
     this.fetch(
       {
-        data: 'where={"title": "4 Page Letter"}',
+        data: `where={"title": "${userInput}"}`,
         success: function() {
           this.trigger('fetched');
         }.bind(this)

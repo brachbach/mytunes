@@ -26,6 +26,8 @@ var LibraryView = Backbone.View.extend({
         return new LibraryEntryView({model: song}).render();
       })
     );
+
+    this.$el.append(new SearchBarView({collection: this.collection}).render());
   }
 
 });
