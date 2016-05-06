@@ -1,5 +1,15 @@
 -after last song in the queue plays, player is stuck at the end of that song and pressing play restarts the song\
 
+-add a new view with collection as model, has places to enter search query and submit
+-fetch from Parse, either asking only for specific things based on the query or filtering the results
+
+-test for the new features
+
+steps:
+-just do a new fetch
+-filter the fetch
+-
+
 
 
 

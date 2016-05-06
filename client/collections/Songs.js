@@ -11,10 +11,24 @@ var Songs = Backbone.Collection.extend({
 
   initialize: function() {
     this.fetch(
-      {success: function() {
-        this.trigger('fetched');
-      }.bind(this)
+      {
+        data: 'where={"title": "Back and Forth"}',
+        success: function() {
+          this.trigger('fetched');
+        }.bind(this)
       }
     );
   },
+
+  fetchAndFilter: function() {
+    console.log('fetchAndFilter');
+    this.fetch(
+      {
+        data: 'where={"title": "4 Page Letter"}',
+        success: function() {
+          this.trigger('fetched');
+        }.bind(this)
+      }
+    );
+  }
 });
